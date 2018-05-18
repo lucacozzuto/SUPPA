@@ -1,4 +1,4 @@
-#!/soft/R/R-3.1.0/bin/Rscript
+#!/usr/bin/env Rscript
 #Given two pairs of lists of samples, split [1] in two files with the samples indicated in [2] and [3]
 
 #[1] First argument: input file that we want to split
@@ -13,7 +13,7 @@ CHARACTER_command_args <- commandArgs(trailingOnly=TRUE)
 
 #Load the input file
 print(paste0("Loading ",CHARACTER_command_args[1],"..."))
-input_file <- read.table(CHARACTER_command_args[1],header=TRUE)
+input_file <- read.table(CHARACTER_command_args[1],header=TRUE, check.names=FALSE)
 
 #Load the list of samples of the first condition
 first_condition <- unlist(strsplit(CHARACTER_command_args[2],","))
